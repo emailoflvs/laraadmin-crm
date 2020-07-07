@@ -5,9 +5,9 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": "~7.4.7",
         "laravel/framework": "5.3.*",
-        "dwij/laraadmin": "dev-master",
+        "dwij/laraadmin": "1.0.40",
 		"elasticquent/elasticquent": "dev-master"
     },
     "require-dev": {

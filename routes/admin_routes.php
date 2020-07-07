@@ -2,7 +2,9 @@
 
 /* ================== Homepage ================== */
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
+//Route::get('/', 'Auth\LoginController@showLoginForm');
+//Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'Auth\LoginController@showLoginForm');
 Route::auth();
 
 /* ================== Access Uploaded Files ================== */
@@ -90,4 +92,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Tickets ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/tickets', 'LA\TicketsController');
 	Route::get(config('laraadmin.adminRoute') . '/ticket_dt_ajax', 'LA\TicketsController@dtajax');
+
+	/* ================== Tests ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/tests', 'LA\TestsController');
+	Route::get(config('laraadmin.adminRoute') . '/test_dt_ajax', 'LA\TestsController@dtajax');
 });

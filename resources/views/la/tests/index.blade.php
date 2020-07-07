@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
-@section("contentheader_title", "Organizations")
-@section("contentheader_description", "organizations listing")
-@section("section", "Organizations")
+@section("contentheader_title", "Tests")
+@section("contentheader_description", "Tests listing")
+@section("section", "Tests")
 @section("sub_section", "Listing")
-@section("htmlheader_title", "Organizations Listing")
+@section("htmlheader_title", "Tests Listing")
 
 @section("headerElems")
-@la_access("Organizations", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Organization</button>
+@la_access("Tests", "create")
+	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Test</button>
 @endla_access
 @endsection
 
@@ -23,6 +23,9 @@
         </ul>
     </div>
 @endif
+
+<h1>ПОЗВОНИТЬ</h1>
+
 
 <div class="box box-success">
 	<!--<div class="box-header"></div>-->
@@ -45,31 +48,21 @@
 	</div>
 </div>
 
-@la_access("Organizations", "create")
+@la_access("Tests", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add Organization</h4>
+				<h4 class="modal-title" id="myModalLabel">Add Test</h4>
 			</div>
-			{!! Form::open(['action' => 'LA\OrganizationsController@store', 'id' => 'organization-add-form']) !!}
+			{!! Form::open(['action' => 'LA\TestsController@store', 'id' => 'test-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
                     @la_form($module)
 					
 					{{--
-					@la_input($module, 'name')
-					@la_input($module, 'email')
-					@la_input($module, 'phone')
-					@la_input($module, 'website')
-					@la_input($module, 'assigned_to')
-					@la_input($module, 'connect_since')
-					@la_input($module, 'address')
-					@la_input($module, 'city')
-					@la_input($module, 'description')
-					@la_input($module, 'profile_image')
-					@la_input($module, 'profile')
+					@la_input($module, 'field_name')
 					--}}
 				</div>
 			</div>
@@ -96,7 +89,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/organization_dt_ajax') }}",
+        ajax: "{{ url(config('laraadmin.adminRoute') . '/test_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",
@@ -106,7 +99,7 @@ $(function () {
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
 	});
-	$("#organization-add-form").validate({
+	$("#test-add-form").validate({
 		
 	});
 });

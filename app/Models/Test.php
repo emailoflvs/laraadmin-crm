@@ -9,11 +9,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Backup extends Model
+class Test extends Model
 {
     use SoftDeletes;
 	
-	protected $table = 'backups';
+	protected $table = 'tests';
 	
 	protected $hidden = [
         

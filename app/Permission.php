@@ -1,6 +1,6 @@
 <?php
 /**
- * Model generated using LaraAdmin
+ * Model genrated using LaraAdmin
  * Help: http://laraadmin.com
  */
 

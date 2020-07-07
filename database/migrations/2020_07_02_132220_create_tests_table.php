@@ -4,12 +4,11 @@
  * Help: http://laraadmin.com
  */
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreatePermissionsTable extends Migration
+class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,10 +17,8 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Module::generate("Permissions", 'permissions', 'name', 'fa-magic', [
-            ["name", "Name", "Name", true, "", 1, 250, true],
-            ["display_name", "Display Name", "String", false, "", 0, 250, true],
-            ["description", "Description", "Textarea", false, "", 0, 1000, false],
+        Module::generate("Tests", 'tests', 'field_name', 'fa-angellist', [
+            ["field_name", "field name", "Name", false, "", 0, 256, false],
         ]);
 		
 		/*
@@ -67,8 +64,8 @@ class CreatePermissionsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('permissions')) {
-            Schema::drop('permissions');
+        if (Schema::hasTable('tests')) {
+            Schema::drop('tests');
         }
     }
 }

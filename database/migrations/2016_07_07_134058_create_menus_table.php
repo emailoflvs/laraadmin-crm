@@ -1,6 +1,6 @@
 <?php
 /**
- * Migration generated using LaraAdmin
+ * Migration genrated using LaraAdmin
  * Help: http://laraadmin.com
  */
 
